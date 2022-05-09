@@ -1,6 +1,6 @@
 $(function () {
     let rid = getParameter("rid")
-    $.get("http://helloworld.qyinter.cn/food/findByRid?rid="+rid,{},function (data) {
+    $.get("https://helloworld.qyinter.cn/food/findByRid?rid="+rid,{},function (data) {
       $('#description_text').html(data.food_details)
       $('#food_time').html(data.time +' min')
       $('#energy').html(data.energy+' kcal')

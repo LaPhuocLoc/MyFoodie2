@@ -1,7 +1,7 @@
 $(function () {
     let name = getParameter("name");
 
-    $.get("http://helloworld.qyinter.cn/food/findByName?name="+name,{},function (data) {
+    $.get("https://helloworld.qyinter.cn/food/findByName?name="+name,{},function (data) {
         $('#search-key-word').html(decodeURI(name))
         let str = ''
         for (let i = 0; i < data.length; i++) {
@@ -33,7 +33,7 @@ $(function () {
     $('#button-addon2').click(function(){
         let name2 = $('#btn2_input').val()
         console.log(name2)
-        $.get("http://helloworld.qyinter.cn/food/findByName?name="+name2,{},function (data) {
+        $.get("https://helloworld.qyinter.cn/food/findByName?name="+name2,{},function (data) {
         $('#search-key-word').html(decodeURI(name2))
         let str = ''
         for (let i = 0; i < data.length; i++) {
