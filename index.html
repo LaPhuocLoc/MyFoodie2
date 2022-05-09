@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <!-- Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <!-- Own Css -->
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/responsive-main.css">
+  <link rel="stylesheet" href="./assets/css/preload.css">
+  <script src="assets/js/jquery.js"></script>
+  <script src="./assets/js/index.js"></script>
+  <script src="assets/js/MiniGame.js"></script>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preload">
+    <h1>Cooking in progress..</h1>
+    <div id="cooking">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div id="area">
+        <div id="sides">
+          <div id="pan"></div>
+          <div id="handle"></div>
+        </div>
+        <div id="pancake">
+          <div id="pastry"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-md navigation-wrapper">
+      <div class="container-lg px-3">
+        <div class="nav-logo">
+          <a href="index.html" class="nav-logo-link">
+            <img src="./assets/img/logo.png" alt="" class="nav-logo-img">
+            <span class="nav-logo-name ms-2">MyFoodie</span>
+          </a>
+        </div>
+        <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-stream navbar-toggler-icon text-white"></i>
+        </button>
+
+        <!-- Offcanvas -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <img src="./assets/img/logo.png" alt="" class="nav-logo-img">
+            <h5 id="offcanvasRightLabel">MyFoodie</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home<i
+                    class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="recipe.html">Recipes<i
+                    class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="explorer.html">Explorer<i
+                    class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact<i
+                    class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./CatchFood/CatchFood.html" onclick="ClickMiniGame()">Mini game<i
+                    class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+              </li>
+              <div class="nav-social ms-md-2">
+                <li class="nav-item nav-item--no-border text-center d-md-none">
+                  <a class="nav-link follow-link" href="#">Subscribe us</a>
+                </li>
+                <div class="row gx-0">
+                  <div class="col-md-3 p-0">
+                    <li class="nav-item">
+                      <a class="nav-link nav-social-link nav-link--youtube" href="#">
+                        <span class="d-md-none">Youtube</span>
+                        <i class="nav-icon fab fa-youtube" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="col-md-3 p-0">
+                    <li class="nav-item">
+                      <a class="nav-link nav-social-link nav-link--twitter" href="#">
+                        <span class="d-md-none">Twitter</span>
+                        <i class="nav-icon fab fa-twitter" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="col-md-3 p-0">
+                    <li class="nav-item">
+                      <a class="nav-link nav-social-link nav-link--facebook" href="#">
+                        <span class="d-md-none">Facebook</span>
+                        <i class="nav-icon fab fa-facebook" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="col-md-3 p-0">
+                    <li class="nav-item">
+                      <a class="nav-link nav-social-link nav-link--instagram" href="#">
+                        <span class="d-md-none">Instagram</span>
+                        <i class="nav-icon fab fa-instagram" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Top banner -->
+  <section class="d-flex align-items-center top-banner">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 data-aos="fade-up">作る<span> 挑戦する</span> <br>今から</h1>
+            <h2 data-aos="fade-right">レシピを参考に料理を完成する</h2>
+            <div class="mt-3"></div>
+            <div class="input-group" data-aos="fade-down">
+              <input type="text" id="search-text" class="form-control" placeholder="I want to make..."
+                aria-label="I want to make..." aria-describedby="button-addon2">
+              <button class="main-btn" type="button" id="button-addon2"><i class="fa fa-search"
+                  aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="author-attr" href='https://www.freepik.com/photos/food'>Food photo created by denamorado -
+      www.freepik.com</a>
+  </section>
+  <!-- Card section -->
+  <section class="welcome section-padding">
+    <div class="container px-0" data-aos="fade-up">
+      <h5 class="section__heading ">このサイトは...</h5>
+      <p class="section__sub">This website...</p>
+      <hr class="center-diamond">
+      <div class="row row-cols-1 row-cols-lg-3 text-center g-0">
+        <div class="col">
+          <div class="card" data-aos="slide-left">
+            <img src="./assets/img/index-jp.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">日本 <span>料理</span></h5>
+              <p class="card-text">新鮮な魚介類の持ち味を生かした料理が多く (刺身，塩焼など) 、材料や調理法に季節感を重んじている。
+                食器の色、材質、形がさまざまで、盛りつけが繊細な美しさをもつのも特徴である。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" data-aos="slide-up" data-aos-duration="1500">
+            <img src="./assets/img/index-vn.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">ベトナム <span>料理</span></h5>
+              <p class="card-text">
+                基本的に米食文化であり、麺類や春巻の皮なども小麦ではなく米から作ることなどを挙げられる。調理方法も炒める、蒸す、煮るなど手法が多いが、魚は、直火で焼く場合があるのが中華料理とは異なる。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" data-aos="slide-right">
+            <img src="./assets/img/index-cn.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">中国 <span>料理</span></h5>
+              <p class="card-text">広い国土を持つ中国では、各地方の気候・地理・歴史・食材・食習慣の違いにより、独自に形成された調理法・味付けの料理がある。世界的に広く普及し、また現地化も進んでいる。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Ranking Section -->
+  <section class="ranking gallery section-padding text-center">
+    <div class="container">
+      <h5 class="section__heading text-center ">トップランキング</h5>
+      <p class="section__sub text-center">Top Ranking</p>
+      <hr class="center-diamond">
+      <div class="rank" id="rank">
+        <div class="rank-item">
+          <div class="rank-item__img-wrapper">
+            <a href="recipe-single.html?rid=8" class="rank-item__img-link">
+              <img src="./assets/img/food/CN/food-cn1.jpg" class="rank-item__img">
+            </a>
+          </div>
+          <div class="rank-item__title">
+            <span class="rank-title rank-title--ranking"><i class="rank-icon rank-icon--one fas fa-crown"></i><span
+                class="rank-num">1</span></span>
+            <span class="rank-title rank-title--name">麻婆豆腐</span>
+          </div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-item__img-wrapper">
+            <a href="recipe-single.html?rid=18" class="rank-item__img-link">
+              <img src="./assets/img/food/VN/vn4.jpg" class="rank-item__img">
+            </a>
+          </div>
+          <div class="rank-item__title">
+            <span class="rank-title rank-title--ranking"><i class="rank-icon rank-icon--two fas fa-crown"></i><span
+                class="rank-num">2</span></span>
+
+            <span class="rank-title rank-title--name">フォー</span>
+          </div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-item__img-wrapper">
+            <a href="recipe-single.html?rid=15" class="rank-item__img-link">
+              <img src="./assets/img/food/VN/vn1.jpg" class="rank-item__img">
+            </a>
+          </div>
+          <div class="rank-item__title">
+            <span class="rank-title rank-title--ranking"><i class="rank-icon fas fa-crown"></i><span
+                class="rank-num">3</span></span>
+
+            <span class="rank-title rank-title--name">生春巻</span>
+          </div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-item__img-wrapper">
+            <a href="recipe-single.html?rid=11" class="rank-item__img-link">
+              <img src="./assets/img/food/CN/food-cn4.jpg" class="rank-item__img">
+            </a>
+          </div>
+          <div class="rank-item__title">
+            <span class="rank-title rank-title--ranking"><i class="rank-icon fas fa-crown"></i><span
+                class="rank-num">4</span></span>
+
+            <span class="rank-title rank-title--name">チャーハン</span>
+          </div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-item__img-wrapper">
+            <a href="recipe-single.html?rid=12" class="rank-item__img-link">
+              <img src="./assets/img/food/CN/food-cn5.jpg" class="rank-item__img">
+            </a>
+          </div>
+          <div class="rank-item__title">
+            <span class="rank-title rank-title--ranking"><i class="rank-icon fas fa-crown"></i><span
+                class="rank-num">5</span></span>
+
+            <span class="rank-title rank-title--name">回鍋肉</span>
+          </div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-item__img-wrapper">
+            <a href="recipe-single.html?rid=13" class="rank-item__img-link">
+              <img src="./assets/img/food/CN/food-cn6.jpeg" class="rank-item__img">
+            </a>
+          </div>
+          <div class="rank-item__title">
+            <span class="rank-title rank-title--ranking"><i class="rank-icon fas fa-crown"></i><span
+                class="rank-num">6</span></span>
+
+            <span class="rank-title rank-title--name">餃子 </span>
+          </div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-item__img-wrapper">
+            <a href="recipe-single.html?rid=14" class="rank-item__img-link">
+              <img src="./assets/img/food/CN/food-cn7.jpg" class="rank-item__img">
+            </a>
+          </div>
+          <div class="rank-item__title">
+            <span class="rank-title rank-title--ranking"><i class="rank-icon fas fa-crown"></i><span
+                class="rank-num">7</span></span>
+
+            <span class="rank-title rank-title--name">酢豚</span>
+          </div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-item__img-wrapper">
+            <a href="recipe-single.html?rid=1" class="rank-item__img-link">
+              <img src="./assets/img/food/JP/food-jp1.jpg" class="rank-item__img">
+            </a>
+          </div>
+          <div class="rank-item__title">
+            <span class="rank-title rank-title--ranking"><i class="rank-icon fas fa-crown"></i><span
+                class="rank-num">8</span></span>
+
+            <span class="rank-title rank-title--name">富山ブラック</span>
+          </div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-item__img-wrapper">
+            <a href="recipe-single.html?rid=6" class="rank-item__img-link">
+              <img src="./assets/img/food/JP/food-jp6.jpg" class="rank-item__img">
+            </a>
+          </div>
+          <div class="rank-item__title">
+            <span class="rank-title rank-title--ranking"><i class="rank-icon fas fa-crown"></i><span
+                class="rank-num">9</span></span>
+
+            <span class="rank-title rank-title--name">牛ステーキ</span>
+          </div>
+        </div>
+        <div class="rank-item">
+          <div class="rank-item__img-wrapper">
+            <a href="recipe-single.html?rid=7" class="rank-item__img-link">
+              <img src="./assets/img/food/JP/food-jp7.jpg" class="rank-item__img">
+            </a>
+          </div>
+          <div class="rank-item__title">
+            <span class="rank-title rank-title--ranking"><i class="rank-icon fas fa-crown"></i><span
+                class="rank-num">10</span></span>
+
+            <span class="rank-title rank-title--name">金沢カレー</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Gallery Section -->
+  <section class="container-fluid px-0 gallery popular-section section-padding">
+    <div class="container-fluid px-0 gallery-top " data-aos="fade-up">
+      <div class="row text-center g-0">
+        <div class="col p-0">
+          <h5 class="section__heading ">おすすめの料理</h5>
+          <p class="section__sub mb-3">Recommended dishes</p>
+          <hr class="center-diamond">
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container-xl g-0 gallery-grid " data-aos="fade-up">
+      <div class="gallery-item" data-aos="slide-left" data-aos-duration="1400" data-aos-delay="200"
+        data-aos-anchor=".gallery-grid">
+        <div class="gallery-bg" style="background: url(./assets/img/food/JP/food-jp6.JPG) no-repeat center/cover;">
+        </div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading">牛ハンバーグ</h5>
+          <p class="g-caption__sub">gyu hanbagu</p>
+          <a href="#" class="main-btn"> もっと知りたい
+            <i class="fas fa-arrow-right more-btn-icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-aos="slide-up" data-aos-duration="1200" data-aos-delay="200"
+        data-aos-anchor=".gallery-grid">
+        <div class="gallery-bg" style="background: url(./assets/img/food/VN/vn6.jpg) no-repeat center/cover;"></div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading ">お好み焼き</h5>
+          <p class="g-caption__sub">okonomiyaki</p>
+          <a href="#" class="main-btn"> もっと知りたい
+            <i class="fas fa-arrow-right more-btn-icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-aos="slide-up" data-aos-duration="1200" data-aos-delay="200"
+        data-aos-anchor=".gallery-grid">
+        <div class="gallery-bg" style="background: url(./assets/img/food/JP/food-jp3.JPG) no-repeat center/cover;">
+        </div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading">北海道海鮮丼</h5>
+          <p class="g-caption__sub">hokkaido kaisendon</p>
+          <a href="#" class="main-btn"> もっと知りたい
+            <i class="fas fa-arrow-right more-btn-icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-aos="slide-down" data-aos-duration="1600" data-aos-delay="200"
+        data-aos-anchor=".gallery-grid">
+        <div class="gallery-bg" style="background: url(./assets/img/food/VN/vn5.jpg) no-repeat center/cover;"></div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading">ブンボーフエ</h5>
+          <p class="g-caption__sub">bun bo hue</p>
+          <a href="#" class="main-btn"> もっと知りたい
+            <i class="fas fa-arrow-right more-btn-icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-aos="slide-down" data-aos-duration="1600" data-aos-delay="200"
+        data-aos-anchor=".gallery-grid">
+        <div class="gallery-bg" style="background: url(./assets/img/food/JP/food-jp5.JPG) no-repeat center/cover;">
+        </div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading">ほうとう</h5>
+          <p class="g-caption__sub">hoto</p>
+          <a href="#" class="main-btn"> もっと知りたい
+            <i class="fas fa-arrow-right more-btn-icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-aos="slide-right" data-aos-duration="1800" data-aos-delay="200"
+        data-aos-anchor=".gallery-grid">
+        <div class="gallery-bg" style="background: url(./assets/img/food/VN/vn3.jpg) no-repeat center/cover;"></div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading">バインミー</h5>
+          <p class="g-caption__sub">banh mi</p>
+          <a href="#" class="main-btn"> もっと知りたい
+            <i class="fas fa-arrow-right more-btn-icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Us Section -->
+  <section class="about-us section-padding">
+    <div class="container">
+      <div class="row g-0">
+        <div
+          class="col-12 col-lg-6 px-5 d-flex flex-column justify-content-center align-items-center text-center about-us__info"
+          data-aos="fade-up">
+          <h5 class="section__heading">料理をチャレンジしましょう</h5>
+          <p class="section__sub">Let's challenge cooking</p>
+          <p class="section__text">レシピと参考動画を提供させていただきます。正し材料や調理手順は同じとしても、人によって味も変わってくるのが料理の魅力といわれています。是非チャレンジしてください！</p>
+          <a href="recipe.html" class="more-btn"> もっと知りたい<div class=""></div>
+            <i class="fas fa-arrow-right more-btn-icon"></i>
+          </a>
+        </div>
+        <div class="col-12 col-lg-6 mt-3 mt-lg-0 mb-3 m-lg-0" data-aos="slide-left">
+          <div class="about-us__top-img">
+            <img src="./assets/img/about-us-1.jpg" alt="" class="about-us__img">
+          </div>
+        </div>
+        <div class="mt-5"></div>
+        <div class="col-12 col-lg-6 mb-3 m-lg-0" data-aos="slide-right">
+          <div class="about-us__top-img">
+            <img src="./assets/img/explorer-bg-jp.jpg" alt="" class="about-us__img">
+          </div>
+        </div>
+        <div
+          class="col-12 col-lg-6 px-5 d-flex flex-column justify-content-center align-items-center text-center about-us__info"
+          data-aos="fade-up">
+          <h5 class="section__heading">久々の旅行はいかがでしょうか</h5>
+          <p class="section__sub">How about a trip after a long absence?</p>
+          <p class="section__text">いろいろな国、異なる食文化。日本の中華やベトナム料理は日本人に合うようにアレンジされた料理を指します。もし本格の料理を食べたい場合、海外旅行はおすすめです。</p>
+          <a href="explorer.html" class="more-btn mb-3"> もっと知りたい
+            <i class="fas fa-arrow-right more-btn-icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Newsletter Section -->
+  <section class="news-letter section-padding"
+    style="background: url(./assets/img/newsletter-bg.jpg) no-repeat top/cover;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <h5 class="section__heading mb-2 text-white">Subscribe to our Newsletter</h5>
+          <p class="section__text text-white">気になった方はぜひ私達のブログに登録よろしくお願いします！</p>
+          <button class="main-btn rounded-pill">SUBSCRIBE</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Videos Section -->
+  <section class="container-fluid px-0 gallery video-section section-padding">
+    <div class="container-fluid px-0 gallery-top " data-aos="fade-up">
+      <div class="row text-center g-0">
+        <div class="col p-0">
+          <h5 class="section__heading ">レシピ動画</h5>
+          <p class="section__sub mb-3">Video Recipes</p>
+          <hr class="center-diamond">
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Item -->
+    <div class="container-fluid container-xl g-0 gallery-grid--video " data-aos="fade-up">
+      <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="https://www.youtube.com/embed/QqXHDQ41R0E" data-aos="slide-left" data-aos-duration="1200"
+        data-aos-delay="200" data-aos-anchor=".gallery-grid--video">
+        <div class="gallery-bg" style="background: url(./assets/img/video1.jpg) no-repeat center/cover;"></div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading">富山ブラック</h5>
+          <p class="g-caption__sub">TOYAMA BLACK</p>
+        </div>
+        <div class="playback-btn"><img src="./assets/img/playback.png" alt="" class="playback-img img-fluid"></div>
+        <span class="video-duration">10:28</span>
+      </div>
+
+      <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="https://www.youtube.com/embed/0a3su4bKvd0" data-aos="slide-down" data-aos-duration="1200"
+        data-aos-delay="200" data-aos-anchor=".gallery-grid--video">
+        <div class="gallery-bg" style="background: url(./assets/img/food/VN/vno5.jpg) no-repeat center/cover;"></div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading">ブンボーフエ</h5>
+          <p class="g-caption__sub">BUN BO HUE</p>
+        </div>
+        <div class="playback-btn"><img src="./assets/img/playback.png" alt="" class="playback-img img-fluid"></div>
+        <span class="video-duration">6:24</span>
+
+      </div>
+
+      <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="https://www.youtube.com/embed/VZE5b85zZBI" data-aos="slide-right" data-aos-duration="1200"
+        data-aos-delay="200" data-aos-anchor=".gallery-grid--video">
+        <div class="gallery-bg" style="background: url(./assets/img/food/CN/food-cn7.jpg) no-repeat center/cover;">
+        </div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading">酢豚</h5>
+          <p class="g-caption__sub">SUBUTA</p>
+        </div>
+        <div class="playback-btn"><img src="./assets/img/playback.png" alt="" class="playback-img img-fluid"></div>
+        <span class="video-duration">17:42</span>
+
+      </div>
+
+      <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="https://www.youtube.com/embed/EmCPHumbMvo" data-aos="slide-up" data-aos-duration="1200"
+        data-aos-delay="200" data-aos-anchor=".gallery-grid--video">
+        <div class="gallery-bg" style="background: url(./assets/img/video2.jpg) no-repeat center/cover;"></div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading ">チャーハン</h5>
+          <p class="g-caption__sub">Fried Rice</p>
+        </div>
+        <div class="playback-btn"><img src="./assets/img/playback.png" alt="" class="playback-img img-fluid"></div>
+        <span class="video-duration">13:30</span>
+      </div>
+
+      <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="https://www.youtube.com/embed/pwqzyS07eu8" data-aos="zoom-in" data-aos-duration="1600"
+        data-aos-delay="200" data-aos-anchor=".gallery-grid--video">
+        <div class="gallery-bg" style="background: url(./assets/img/food/VN/vn1.jpg) no-repeat center/cover;"></div>
+        <div class="g-caption">
+          <h5 class="g-caption__heading">ライスロールズ</h5>
+          <p class="g-caption__sub">BANH CUON</p>
+        </div>
+        <div class="playback-btn"><img src="./assets/img/playback.png" alt="" class="playback-img img-fluid"></div>
+        <span class="video-duration">11:38</span>
+
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="row g-0">
+      <div class="col-2 gallery-bg-footer" style="background: url(./assets/img/gallery-1.jpg) no-repeat center/cover;">
+      </div>
+      <div class="col-2 gallery-bg-footer" style="background: url(./assets/img/gallery-2.jpg) no-repeat center/cover;">
+      </div>
+      <div class="col-2 gallery-bg-footer" style="background: url(./assets/img/gallery-3.jpg) no-repeat center/cover;">
+      </div>
+      <div class="col-2 gallery-bg-footer" style="background: url(./assets/img/gallery-4.jpg) no-repeat center/cover;">
+      </div>
+      <div class="col-2 gallery-bg-footer" style="background: url(./assets/img/gallery-5.jpg) no-repeat center/cover;">
+      </div>
+      <div class="col-2 gallery-bg-footer" style="background: url(./assets/img/gallery-6.jpg) no-repeat center/cover;">
+      </div>
+    </div>
+    <div class="container-fluid footer__bottom section-padding">
+      <div class="container text-center">
+        <p class="footer__powered text-white">
+          Copyright ©2021 All rights reserved by <span>HelloWorldGroup</span>
+        </p>
+        <div class="footer__social">
+          <a href="#"> <i class="fab fa-facebook    "></i> </a>
+          <a href="#"> <i class="fab fa-twitch    "></i> </a>
+          <a href="#"> <i class="fab fa-youtube    "></i> </a>
+          <a href="#"> <i class="fab fa-instagram    "></i> </a>
+          <a href="#"> <i class="fab fa-discord    "></i> </a>
+          <a href="#"> <i class="fab fa-reddit    "></i> </a>
+        </div>
+        <span class="icon-author">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Video Modal -->
+  <div class="modal px-0 fade zoom-in" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <iframe title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen id="addVideo"></iframe>
+      </div>
+    </div>
+  </div>
+  <!-- Back to top -->
+  <button type="button" class="btn btn-floating btn-lg back-top-btn" id="back-top" data-aos="fade-up"
+    data-aos-anchor=".welcome" data-aos-once="false">
+    <i class="fas fa-angle-double-up"></i>
+  </button>
+  <!-- Script -->
+  <script src="./assets/js/back-top.js"></script>
+  <script src="./assets/js/slow-scroll.js"></script>
+  <script src="./assets/js/sticky-nav.js"></script>
+  <script src="./assets/js/varying-modal.js"></script>
+  <script src="./assets/js/preload.js"></script>
+  <script src="./assets/js/slick-slider.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    AOS.init({
+      delay: 100,
+      duration: 1200,
+      easing: 'ease-out',
+    });
+  </script>
+</body>
+
+</html>

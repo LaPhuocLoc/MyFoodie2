@@ -1,0 +1,177 @@
+/* Top banner */
+.top-banner .container-fluid {
+    position: relative;
+}
+
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/ice-cream-background.jpg) no-repeat center/cover;
+}
+
+.banner-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-text {
+    z-index: 3;
+}
+
+.banner-title {
+    position: relative;
+    padding: 55px 15px 0;
+    color: #fff !important;
+}
+
+/* Recipe section */
+.recipe-wrapper {
+    position: relative;
+    box-shadow:
+        0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075);
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.recipe-bg-container {
+    padding-top: 150%;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    transition: .3s ease-out;
+}
+
+.recipe-bg-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    transition: .3s ease-out;
+
+}
+
+.recipe-bg-container:hover::after {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.recipe-label {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.recipe-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem 1.5rem;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.recipe-caption__heading {
+    color: #fff;
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.recipe-caption__sub {
+    color: #fff;
+    font-size: .875rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Pagination Nav */
+.page-item {
+    margin: 0 8px;
+}
+
+.pagination li:not(:first-child):not(:last-child) a {
+    border-radius: 50%;
+}
+
+.page-link {
+    padding: 12px 14px !important;
+    margin: 0 !important;
+    color: var(--black-color);
+    transition: 0.3s all ease-out;
+    box-shadow: 0 0 10px rgb(217, 217, 217);
+}
+
+.page-item.active .page-link,
+.page-link:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color) !important;
+    border-color: var(--primary-color);
+}
+
+/* Search & Filters */
+.filter__heading {
+    font-size: 1.75rem;
+}
+
+.filter__search {
+    border-radius: 1.875rem !important;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.filter__search input {
+    padding: .375rem 1rem !important;
+    border: none;
+    outline: none;
+
+}
+
+.filter__search input::placeholder {
+    font-size: .875rem;
+    font-weight: 400;
+}
+
+.main-btn {
+    outline: none;
+    border: none;
+    z-index: 1;
+    box-shadow: none;
+}
+
+.main-btn:hover {
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.filter__category .form-select {
+    cursor: pointer;
+    border-radius: 1.875rem !important;
+    outline: none;
+}
+
+.filter__category .form-select:focus {
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+}
+
+/* Search page */
+#search-not-found {
+    color: var(--white-color) !important;
+    font-size: 2.25rem;
+    margin: 16px 0;
+    line-height: 1.4;
+    visibility: hidden;
+    opacity: 0;
+}

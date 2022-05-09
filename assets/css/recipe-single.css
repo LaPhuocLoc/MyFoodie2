@@ -1,0 +1,159 @@
+ul {
+    list-style: none;
+}
+
+/* Top banner */
+.top-banner .container-fluid {
+    position: relative;
+    padding-top: 40%;
+}
+
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+/* Main */
+.description__heading {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.description__heading i {
+    margin-right: .5rem;
+}
+
+.description__text {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    text-align: justify;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.info-list {
+    border-radius: 12px;
+    box-shadow: 0 0 10px #999;
+    padding: 1.25rem 2.8125rem;
+}
+
+.info-item {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.info-item:not(:last-child) {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.info-item i {
+    margin-right: .5rem;
+}
+
+.info-icon-text {
+    color: var(--primary-color) !important;
+}
+
+/* Material  */
+.main__heading {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.main__heading i {
+    margin-right: .5rem;
+}
+
+.material ul li:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.material .form-check {
+    padding: 0;
+}
+
+.material .form-check-input {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    transition: 0.1s all;
+    float: none !important;
+    margin-right: .5rem;
+}
+
+.material .form-check-input:focus {
+    box-shadow: none;
+    border-color: rgba(0, 0, 0, 0.25);
+}
+
+.material .form-check-input:checked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    ;
+}
+
+.material .form-check-label {
+    display: contents;
+    font-size: 1.25rem;
+    line-height: normal;
+}
+
+/* Instruction */
+.instruction ol {
+    color: var(--primary-color);
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+.instruction ol li {
+    padding: .625rem 0 1.25rem;
+}
+
+.instruction ol li p {
+    display: contents;
+    font-size: 1.25rem;
+}
+
+.instruction__img {
+    padding-top: 100%;
+    border-radius: 8px;
+}
+
+/* Media */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

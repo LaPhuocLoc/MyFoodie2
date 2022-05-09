@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+  <!-- Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Own Css -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/recipe.css">
+  <link rel="stylesheet" href="assets/css/responsive-recipe.css">
+  <link rel="stylesheet" href="assets/css/preload.css">
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/getParameter.js"></script>
+  <script src="assets/js/search.js"></script>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preload">
+    <h1>Cooking in progress..</h1>
+    <div id="cooking">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div id="area">
+        <div id="sides">
+          <div id="pan"></div>
+          <div id="handle"></div>
+        </div>
+        <div id="pancake">
+          <div id="pastry"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-md navigation-wrapper">
+      <div class="container-lg px-3">
+        <div class="nav-logo">
+          <a href="index.html" class="nav-logo-link">
+            <img src="./assets/img/logo.png" alt="" class="nav-logo-img">
+            <span class="nav-logo-name ms-2">MyFoodie</span>
+          </a>
+        </div>
+        <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-stream navbar-toggler-icon text-white"></i>
+        </button>
+
+        <!-- Offcanvas -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <img src="./assets/img/logo.png" alt="" class="nav-logo-img">
+            <h5 id="offcanvasRightLabel">MyFoodie</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home<i
+                    class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="recipe.html">Recipes<i
+                    class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="explorer.html">Explorer<i
+                    class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact<i
+                    class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./CatchFood/CatchFood.html">Mini game<i
+                    class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+              </li>
+              <div class="nav-social ms-md-2">
+                <li class="nav-item nav-item--no-border text-center d-md-none">
+                  <a class="nav-link follow-link" href="#">Subscribe us</a>
+                </li>
+                <div class="row gx-0">
+                  <div class="col-md-3 p-0">
+                    <li class="nav-item">
+                      <a class="nav-link nav-social-link nav-link--youtube" href="#">
+                        <span class="d-md-none">Youtube</span>
+                        <i class="nav-icon fab fa-youtube" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="col-md-3 p-0">
+                    <li class="nav-item">
+                      <a class="nav-link nav-social-link nav-link--twitter" href="#">
+                        <span class="d-md-none">Twitter</span>
+                        <i class="nav-icon fab fa-twitter" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="col-md-3 p-0">
+                    <li class="nav-item">
+                      <a class="nav-link nav-social-link nav-link--facebook" href="#">
+                        <span class="d-md-none">Facebook</span>
+                        <i class="nav-icon fab fa-facebook" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="col-md-3 p-0">
+                    <li class="nav-item">
+                      <a class="nav-link nav-social-link nav-link--instagram" href="#">
+                        <span class="d-md-none">Instagram</span>
+                        <i class="nav-icon fab fa-instagram" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Top banner -->
+  <section class="top-banner">
+    <div class="container-fluid text-center text-white">
+      <div class="banner-bg"></div>
+      <div class="banner-text section-padding">
+        <h1 class="banner-title">Search for: "<span id="search-key-word"></span>"
+          <p id="search-not-found">Does not match any results!</p>
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recipe section -->
+  <section class="recipe section-padding" id="recipe-section">
+    <div class="container-xl">
+      <div class="row text-center flex-lg-row-reverse g-5">
+        <!-- Filter search -->
+        <div class="col-12 col-lg-3">
+          <div class="filter-wrapper">
+            <h5 class="filter__heading my-3">Search & Filters</h5>
+            <div class="input-group filter__search my-3">
+              <input type="text" class="form-control" id="btn2_input" placeholder="I want to make..."
+                aria-label="I want to make..." aria-describedby="button-addon2">
+              <button class="main-btn" type="button" id="button-addon2"><i class="fa fa-search"
+                  aria-hidden="true"></i></button>
+            </div>
+            <div class="filter__category">
+              <select class="form-select my-3" aria-label="Default select example">
+                <option selected>Categories</option>
+                <option value="1">Food</option>
+                <option value="2">Drink</option>
+                <option value="3">Cake</option>
+              </select>
+
+              <select class="form-select my-3" aria-label="Default select example">
+                <option selected>Cuisines</option>
+                <option value="1">Vietnam</option>
+                <option value="2">Japan</option>
+                <option value="3">China</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- Recipe list -->
+        <div class="col-12 col-lg-9">
+          <div class="row g-5" id="row-content">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="row g-0">
+      <div class="col-2 gallery-bg-footer" style="background: url(assets/img/gallery-1.jpg)no-repeat center/cover;">
+      </div>
+      <div class="col-2 gallery-bg-footer" style="background: url(assets/img/gallery-2.jpg)no-repeat center/cover;">
+      </div>
+      <div class="col-2 gallery-bg-footer" style="background: url(assets/img/gallery-3.jpg)no-repeat center/cover;">
+      </div>
+      <div class="col-2 gallery-bg-footer" style="background: url(assets/img/gallery-4.jpg)no-repeat center/cover;">
+      </div>
+      <div class="col-2 gallery-bg-footer" style="background: url(assets/img/gallery-5.jpg)no-repeat center/cover;">
+      </div>
+      <div class="col-2 gallery-bg-footer" style="background: url(assets/img/gallery-6.jpg)no-repeat center/cover;">
+      </div>
+    </div>
+    <div class="container-fluid footer__bottom section-padding">
+      <div class="container text-center">
+        <p class="footer__powered text-white">
+          Copyright ©2021 All rights reserved by <span>HelloWorldGroup</span>
+        </p>
+        <div class="footer__social">
+          <a href="#"> <i class="fab fa-facebook    "></i> </a>
+          <a href="#"> <i class="fab fa-twitch    "></i> </a>
+          <a href="#"> <i class="fab fa-youtube    "></i> </a>
+          <a href="#"> <i class="fab fa-instagram    "></i> </a>
+          <a href="#"> <i class="fab fa-discord    "></i> </a>
+          <a href="#"> <i class="fab fa-reddit    "></i> </a>
+        </div>
+        <span class="icon-author">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button type="button" class="btn btn-floating btn-lg back-top-btn" id="back-top" data-aos="fade-up"
+    data-aos-anchor=".welcome" data-aos-once="false">
+    <i class="fas fa-angle-double-up"></i>
+  </button>
+  <!-- Script -->
+  <script src="assets/js/back-top.js"></script>
+  <script src="assets/js/slow-scroll.js"></script>
+  <script src="assets/js/sticky-nav.js"></script>
+  <script src="assets/js/varying-modal.js"></script>
+  <script src="assets/js/preload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      delay: 100,
+      duration: 1200,
+      easing: 'ease-out',
+      once: true,
+    });
+  </script>
+</body>
+
+</html>

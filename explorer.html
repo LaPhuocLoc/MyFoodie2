@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorer</title>
+    <!-- Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- Own Css -->
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/explorer.css">
+    <link rel="stylesheet" href="./assets/css/responsive-explorer.css">
+    <link rel="stylesheet" href="./assets/css/preload.css">
+    <!-- JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preload">
+        <h1>Cooking in progress..</h1>
+        <div id="cooking">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div id="area">
+                <div id="sides">
+                    <div id="pan"></div>
+                    <div id="handle"></div>
+                </div>
+                <div id="pancake">
+                    <div id="pastry"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-md navigation-wrapper">
+            <div class="container-lg px-3">
+                <div class="nav-logo">
+                    <a href="index.html" class="nav-logo-link">
+                        <img src="./assets/img/logo.png" alt="" class="nav-logo-img">
+                        <span class="nav-logo-name ms-2">MyFoodie</span>
+                    </a>
+                </div>
+                <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-stream navbar-toggler-icon text-white"></i>
+                </button>
+
+                <!-- Offcanvas -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <img src="./assets/img/logo.png" alt="" class="nav-logo-img">
+                        <h5 id="offcanvasRightLabel">MyFoodie</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Home<i
+                                        class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="recipe.html">Recipes<i
+                                        class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="explorer.html">Explorer<i
+                                        class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact<i
+                                        class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./CatchFood/CatchFood.html">Mini game<i
+                                        class="next-icon d-md-none fas fa-angle-double-right"></i></a>
+                            </li>
+                            <div class="nav-social ms-md-2">
+                                <li class="nav-item nav-item--no-border text-center d-md-none">
+                                    <a class="nav-link follow-link" href="#">Subscribe us</a>
+                                </li>
+                                <div class="row gx-0">
+                                    <div class="col-md-3 p-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link nav-social-link nav-link--youtube" href="#">
+                                                <span class="d-md-none">Youtube</span>
+                                                <i class="nav-icon fab fa-youtube" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </div>
+                                    <div class="col-md-3 p-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link nav-social-link nav-link--twitter" href="#">
+                                                <span class="d-md-none">Twitter</span>
+                                                <i class="nav-icon fab fa-twitter" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </div>
+                                    <div class="col-md-3 p-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link nav-social-link nav-link--facebook" href="#">
+                                                <span class="d-md-none">Facebook</span>
+                                                <i class="nav-icon fab fa-facebook" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </div>
+                                    <div class="col-md-3 p-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link nav-social-link nav-link--instagram" href="#">
+                                                <span class="d-md-none">Instagram</span>
+                                                <i class="nav-icon fab fa-instagram" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide country">
+                <div class="country__bg jp-bg"></div>
+                <div class="country__content">
+                    <img src="./assets/img/explorer-jp.png" alt="" class="country__icon">
+                    <h1 class="country__name">Japan</h1>
+                    <p class="country__desc">新鮮な魚介類の持ち味を生かした料理が多く (刺身，塩焼など) 、材料や調理法に季節感を重んじている。
+                        食器の色、材質、形がさまざまで、盛りつけが繊細な美しさをもつのも特徴である。</p>
+                    <button class="country__detail" data-bs-toggle="modal" data-bs-target="#jpModal">
+                        <p>View details</p>
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide country">
+                <div class="country__bg cn-bg"></div>
+                <div class="country__content">
+                    <img src="./assets/img/explorer-cn.png" alt="" class="country__icon">
+                    <h1 class="country__name">China</h1>
+                    <p class="country__desc">
+                        広い国土を持つ中国では、各地方の気候・地理・歴史・食材・食習慣の違いにより、独自に形成された調理法・味付けの料理がある。世界的に広く普及し、また現地化も進んでいる。</p>
+                    <button class="country__detail" data-bs-toggle="modal" data-bs-target="#cnModal">
+                        <p>View details</p>
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide country">
+                <div class="country__bg vn-bg"></div>
+                <div class="country__content">
+                    <img src="./assets/img/explorer-vn.png" alt="" class="country__icon">
+                    <h1 class="country__name">Vietnam</h1>
+                    <p class="country__desc">
+                        基本的に米食文化であり、麺類や春巻の皮なども小麦ではなく米から作ることなどを挙げられる。調理方法も炒める、蒸す、煮るなど手法が多いが、魚は、直火で焼く場合があるのが中華料理とは異なる。</p>
+                    <button class="country__detail" data-bs-toggle="modal" data-bs-target="#vnModal">
+                        <p>View details</p>
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide" style="height:300px;">
+                <div class="footer">
+                    <div class="container-fluid footer__bottom section-padding">
+                        <div class="container text-center">
+                            <p class="footer__powered text-white">
+                                Copyright ©2021 All rights reserved by <span>HelloWorldGroup</span>
+                            </p>
+                            <div class="footer__social">
+                                <a href="#"> <i class="fab fa-facebook    "></i> </a>
+                                <a href="#"> <i class="fab fa-twitch    "></i> </a>
+                                <a href="#"> <i class="fab fa-youtube    "></i> </a>
+                                <a href="#"> <i class="fab fa-instagram    "></i> </a>
+                                <a href="#"> <i class="fab fa-discord    "></i> </a>
+                                <a href="#"> <i class="fab fa-reddit    "></i> </a>
+                            </div>
+                            <span class="icon-author">Icons made by <a href="https://www.freepik.com"
+                                    title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+                                    title="Flaticon">www.flaticon.com</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade zoom-in" id="jpModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="jpModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="explorer__modal-title">Japan</p>
+                    <button class="explorer__modal-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body custom-scrollbar-css py-0" id="custom-dark-thin">
+                    <div class="container-fluid p-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="explorer-item">
+                                    <h1>Tokyo</h1>
+                                    <p>日本の首都であり、世界で最も人口の多い大都市である東京は、伝統と革新を備え、食事、買い物、探索を楽しむ機会が無限にあります。
+                                        東京は、日本最大の島である本州の関東地方の東京湾にあります。最寄りの空港は、正式には東京国際空港と呼ばれている羽田空港です。トレンドのショッピングエリアである原宿と渋谷から高級店が立ち並ぶ銀座に至るまで、ファッションとショッピングの街として知られています。
+                                    </p>
+                                    <div class="explorer-img-wrap">
+                                        <img src="./assets/img/explorer-tokyo.jpg" alt="" class="explorer-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="explorer-item">
+                                    <h1>Osaka</h1>
+                                    <p>大阪は、食べ物、ショッピング、ナイトライフが有名で、歴史、文化、レトロな魅力も豊富な、楽しく、フレンドリーな街です。
+                                        大阪は関西地方を探索するのに理想的なハブです。東京から新幹線で2時間強でアクセスでき、京都、奈良、広島に行くのに便利です。
+                                        ユニバーサルスタジオジャパン（USJ）のスリル満点の乗り物から、道頓堀周辺のネオン街やナイトライフなどの色とりどりの魅力、大阪城とその美しい公園や日本で最も古い寺院の1つである四天王寺といった歴史的魅力まで、たくさんの魅力があります。散策中にたこ焼き、お好み焼き、串カツなどの大阪の有名な屋台の食べ物で腹ごしらえしましょう。
+                                    </p>
+                                    <div class="explorer-img-wrap">
+                                        <img src="./assets/img/explorer-osaka.jpg" alt="" class="explorer-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="explorer-item">
+                                    <h1>Hokkaido</h1>
+                                    <p>北海道は、美しい自然、世界レベルのパウダースノー、おいしい海鮮物、魅力的な先住民の文化が有名です。東京から飛行機ですぐの北海道は、オールシーズン楽しめます。
+                                        北海道は、パウダースノーとニセコ、ルスツ、富良野などの人気リゾートがあるため、冬のスキーやスノーボードに人気の場所となっています。北海道の主要都市である札幌は、札幌ビール、札幌ラーメン、毎年恒例の札幌雪祭りが有名です。函館は、魅力的な歴史エリアと素晴らしい夜景が楽しめる伝統的な港です。
+                                    </p>
+                                    <div class="explorer-img-wrap">
+                                        <img src="./assets/img/explorer-hokkaido.jpg" alt="" class="explorer-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2 -->
+    <div class="modal fade zoom-in" id="cnModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cnModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="explorer__modal-title">China</p>
+                    <button class="explorer__modal-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body custom-scrollbar-css py-0" id="custom-dark-thin">
+                    <div class="container-fluid p-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="explorer-item">
+                                    <h1>Beijing</h1>
+                                    <p>飛躍的発展をとげ、近代都市の風貌を見せる中国の首都・北京。高層ビルに壮麗な宮殿や広大な庭園が調和し、万里の長城や歴代皇帝の陵墓など、郊外に残る数多くの遺産が、絢爛たる歴史を物語ります。
+                                        古くから北京の海への玄関口として栄えた天津、河北省の省都・石家荘、雲崗石窟で知られる大同、清朝の夏の離宮があった承徳など、北京周辺には足を延ばしてみたい魅力的な町々が点在しています。
+                                    </p>
+                                    <div class="explorer-img-wrap">
+                                        <img src="./assets/img/explorer-beijing.jpg" alt="" class="explorer-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="explorer-item">
+                                    <h1>Sichuan</h1>
+                                    <p>麻婆豆腐などの四川料理で知られる四川省。その省都・成都は三国時代には蜀漢の都となった古都。劉備と孔明を祀る武侯祠で『三国志』に思いを馳せたり、パンダとのふれあいも四川省ならでは。
+                                        四川省には神秘の湖沼群が散らばる九寨溝、石灰華の池が棚田状に折り重なる黄龍、世界最大級の楽山大仏など世界遺産が点在。成都を拠点に大自然の造形美を愛でるハイキングや遺跡探訪が楽しめます。
+                                    </p>
+                                    <div class="explorer-img-wrap">
+                                        <img src="./assets/img/explorer-sichuan.jpg" alt="" class="explorer-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="explorer-item">
+                                    <h1>Shanghai</h1>
+                                    <p>まずは租界時代の歴史建築が並ぶ外灘から南京東路へ。上海きっての繁華街でショッピング。流行に敏感な方には、旧フランス租界の面影漂う町並みに高感度なショップが集まる新天地がおすすめ。オールド上海を楽しみたいなら、中国らしさを色濃く残す庶民的な雰囲気の豫園商城へ。
+                                    </p>
+                                    <div class="explorer-img-wrap">
+                                        <img src="./assets/img/explorer-shanghai.jpg" alt="" class="explorer-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 3 -->
+    <div class="modal fade zoom-in" id="vnModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="vnModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="explorer__modal-title">Vietnam</p>
+                    <button class="explorer__modal-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body custom-scrollbar-css py-0" id="custom-dark-thin">
+                    <div class="container-fluid p-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="explorer-item">
+                                    <h1>Ho Chi Minh City</h1>
+                                    <p>通りを埋めるバイクの群れと高層ビルに象徴されるホーチミン。サイゴン大教会からサイゴン川へ向かう随一の繁華街ドンコイ通りには、雑貨店やブティックなどが点在。ドンユー通りを左に入ると、おしゃれなカフェやレストランがずらり。ショッピング＆グルメを満喫できます。
+                                    </p>
+                                    <div class="explorer-img-wrap">
+                                        <img src="./assets/img/explorer-saigon.jpg" alt="" class="explorer-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="explorer-item">
+                                    <h1>Hoi An Ancient Town</h1>
+                                    <p>約450軒の木造の古い家屋が建ち並び、18世紀以来の佇まいが残る旧市街。車の乗り入れが禁止され、時の流れが止まったかのよう。旧暦の毎月14日、満月の夜にはホイアンの町から電気が消え、色とりどりのランタンがともります。ほのかな明かりに照らされる古い佇まいや川面に揺れる明かりが幻想的。露店も出て賑わいます。
+                                    </p>
+                                    <div class="explorer-img-wrap">
+                                        <img src="./assets/img/explorer-hoian.jpg" alt="" class="explorer-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="explorer-item">
+                                    <h1>Ha noi</h1>
+                                    <p>点在する湖や公園の緑が美しい政治と文化の中心地・ハノイ。フランス統治時代の欧風の建物や教会が顔をのぞかせる目抜き通りは、街路樹に縁取られ、エネルギッシュなホーチミンに比べ落ち着いた雰囲気。また、天秤棒を担いだ物売りが行き交うなど、昔ながらの風情を漂わせています。
+                                    </p>
+                                    <div class="explorer-img-wrap">
+                                        <img src="./assets/img/explorer-hanoi.jpg" alt="" class="explorer-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="./assets/js/sticky-nav.js"></script>
+    <script src="./assets/js/preload.js"></script>
+    <script src="./assets/js/slick-slider.js"></script>
+    <script src="./assets/js/swiper-slide.js"></script>
+    <script src="./assets/js/custom-scrollbar.js"></script>
+    <script>
+        AOS.init({
+            delay: 100,
+            duration: 1200,
+            easing: 'ease-out',
+            once: true,
+        });
+    </script>
+</body>
+
+</html>
